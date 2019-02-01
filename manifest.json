@@ -19,22 +19,26 @@
         "default_title": "page action demo",
         "default_popup": "src/page_action/page_action.html"
     },
+    "permissions": [
+        "activeTab"
+    ],
     "content_scripts": [
-        {
-              "matches": [
-                    "https://www.google.com/*"
-              ],
-              "css": [
-                    "src/inject/inject.css"
-              ]
-        },
-        {
-              "matches": [
-                    "https://www.google.com/*"
-              ],
-              "js": [
-                    "src/inject/inject.js"
-              ]
-        }
+      {
+        "matches": [
+            "<all_urls>"
+        ],
+        "css": [
+          "src/inject/inject.css"
+        ]
+      },
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": [
+          "src/inject/inject.js"
+        ]
+      }
     ]
+
 }

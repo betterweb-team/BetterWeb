@@ -5,9 +5,17 @@ chrome.extension.sendMessage({}, function(response) {
 
 		// ----------------------------------------------------------
 		// This part of the script triggers when page is done loading
-		console.log("Hello. This message was sent from scripts/inject.js");
+		//alert("Hello. This message was sent from scripts/inject.js");
 		// ----------------------------------------------------------
+
+        if (isMedia(document.URL) ) {
+            alert("Hello. This message was sent from scripts/inject.js");
+        }
 
 	}
 	}, 10);
 });
+
+function isMedia (URL) {
+    return false;
+}
