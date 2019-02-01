@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/HaojiXu/BetterWeb/issues"
   },
-  "homepage": "https://github.com/HaojiXu/BetterWeb#readme"
+  "homepage": "https://github.com/HaojiXu/BetterWeb#readme",
+  "dependencies": {
+    "vue": "^2.5.22"
+  }
 }
