@@ -1,0 +1,24 @@
+{
+  "name": "betterweb",
+  "version": "0.0.1",
+  "description": "A chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaojiXu/BetterWeb.git"
+  },
+  "keywords": [
+    "Chrome",
+    "web",
+    "safe"
+  ],
+  "author": "HaojiXu",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/HaojiXu/BetterWeb/issues"
+  },
+  "homepage": "https://github.com/HaojiXu/BetterWeb#readme"
+}

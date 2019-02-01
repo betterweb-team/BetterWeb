@@ -1,0 +1,6 @@
+{
+    "name": "BetterWeb",
+    "version": "0.0.1",
+    "description": "A chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.",
+    "manifest_version": 2
+}
