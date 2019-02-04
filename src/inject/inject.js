@@ -1,21 +1,17 @@
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
+function isMedia (URL) {
+    return true; // TODO Remove for production
+}
 
+chrome.extension.sendMessage({}, function(response) {
+	window.addEventListener('load', function inject() {
 		// ----------------------------------------------------------
 		// This part of the script triggers when page is done loading
 		//alert("Hello. This message was sent from scripts/inject.js");
 		// ----------------------------------------------------------
 
         if (isMedia(document.URL) ) {
-            alert("Hello. This message was sent from scripts/inject.js");
+            console.log("Hello. This message was sent from scripts/inject.js");
         }
 
-	}
-	}, 10);
+	});
 });
-
-function isMedia (URL) {
-    return false;
-}
