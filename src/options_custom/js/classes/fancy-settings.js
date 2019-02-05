@@ -9,8 +9,6 @@
         
         "initialize": function (name, icon) {
             // Set title and icon
-            $("title").set("text", name);
-            $("favicon").set("href", icon);
             $("icon").set("src", icon);
             $("settings-label").set("text", (i18n.get("settings") || "Settings"));
             $("search-label").set("text", (i18n.get("search") || "Search"));
