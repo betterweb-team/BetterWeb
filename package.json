@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/HaojiXu/BetterWeb/issues"
   },
-  "homepage": "https://github.com/HaojiXu/BetterWeb#readme"
+  "homepage": "https://github.com/HaojiXu/BetterWeb#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.17.0"
+  }
 }
