@@ -1,1 +1,90 @@
-@import 'colorscheme'
+/* To transpile to css, run
+sass scss/page.scss css/page.css --no-source-map --watch
+*/
+
+@import 'colorscheme';
+
+@font-face {
+    font-family: modern;
+    src: url('../fonts/majormonodisplay.ttf')
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url('../fonts/quicksand.ttf')
+}
+
+html {
+    text-align: center;
+    background-color: $bg1;
+    overflow: auto;
+}
+
+body {
+    margin: 0 10%;
+    padding-top: 4%;   
+}
+
+.title {
+    color: $heading1;
+    font-size: 4em;
+    margin-bottom: 5%;
+}
+
+h1 { 
+    font-family: modern;
+}
+
+p {
+    font: 1em quicksand;
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    body {
+        margin: 0 200px
+    }
+}
+
+
+.info {
+    padding: 5%;
+    background-color: lighten($heading1,60);
+    border-radius: 25px 25px 0 0;
+    text-align: left;
+    display: flex;
+
+    img {
+        width: 15%;
+        height: 15%;
+    }
+
+    p {
+        margin: 1% 0 0 3%;
+        padding: 0;
+    }
+}
+
+.settings_container {
+    background-color: $bg2;
+    border-radius: 0 0 25px 25px;
+    text-align: left;
+    padding: 5% 5% 15% 5%;
+
+    .setting {
+        margin-left: 50px;
+
+        h1 {
+            color: $heading2;
+        }
+
+        p {
+            margin: 4px 0;
+        }
+    }
+}
