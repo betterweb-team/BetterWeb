@@ -24,7 +24,7 @@ body {
 
 .title {
   color: #16366b;
-  font-size: 4em;
+  font-size: 50px;
   margin-bottom: 5%;
 }
 
@@ -33,12 +33,17 @@ h1 {
 }
 
 p {
-  font: 1em quicksand;
+  font: 20px quicksand;
+  color: black;
 }
 
 @media screen and (max-width: 1000px) {
   .title {
-    font-size: 3em;
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 15px;
   }
 }
 @media screen and (min-width: 2000px) {
@@ -47,6 +52,9 @@ p {
   }
 }
 .info {
+  border-color: #ddb520;
+  border-style: solid;
+  border-width: 2px 2px 0 2px;
   padding: 5%;
   background-color: #c1d3f2;
   border-radius: 25px 25px 0 0;
@@ -63,16 +71,21 @@ p {
 }
 
 .settings_container {
+  border-color: #ddb520;
+  border-style: solid;
+  border-width: 0 2px 2px 2px;
   background-color: white;
   border-radius: 0 0 25px 25px;
   text-align: left;
   padding: 5% 5% 15% 5%;
+  margin-bottom: 75px;
 }
 .settings_container .setting {
   margin-left: 50px;
 }
 .settings_container .setting h1 {
   color: #ddb520;
+  font-size: 30px;
 }
 .settings_container .setting p {
   margin: 4px 0;

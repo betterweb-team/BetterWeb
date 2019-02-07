@@ -4,6 +4,18 @@ sass scss/page.scss css/page.css --no-source-map --watch
 
 @import 'colorscheme';
 
+@mixin border($upordown, $thickness) {
+    border-color: $heading2;
+    border-style: solid;
+    @if $upordown == both {
+        border-width: $thickness;
+    } @else if $upordown == up {
+        border-width: $thickness $thickness 0 $thickness;
+    } @else if $upordown == down{
+        border-width: 0 $thickness $thickness $thickness;
+    }
+}
+
 @font-face {
     font-family: modern;
     src: url('../fonts/majormonodisplay.ttf')
@@ -27,7 +39,7 @@ body {
 
 .title {
     color: $heading1;
-    font-size: 4em;
+    font-size: 50px;
     margin-bottom: 5%;
 }
 
@@ -36,12 +48,16 @@ h1 {
 }
 
 p {
-    font: 1em quicksand;
+    font: 20px quicksand;
+    color: $text;
 }
 
 @media screen and (max-width: 1000px) {
     .title {
-        font-size: 3em;
+        font-size: 40px;
+    }
+    p {
+        font-size: 15px;
     }
 }
 
@@ -53,6 +69,7 @@ p {
 
 
 .info {
+    @include border(up, 2px);
     padding: 5%;
     background-color: lighten($heading1,60);
     border-radius: 25px 25px 0 0;
@@ -71,16 +88,19 @@ p {
 }
 
 .settings_container {
+    @include border(down, 2px);
     background-color: $bg2;
     border-radius: 0 0 25px 25px;
     text-align: left;
     padding: 5% 5% 15% 5%;
+    margin-bottom: 75px;
 
     .setting {
         margin-left: 50px;
 
         h1 {
             color: $heading2;
+            font-size: 30px;
         }
 
         p {
