@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="css/page.css" media="screen">
         
         <!-- JavaScript -->
+        <script src="js/settings.js"></script>
+        <script src="js/retrieve.js"></script>
         <script src="js/index.js"></script>
     </head>
     <body>
@@ -18,11 +20,11 @@
                 <p>BetterWeb is a chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.</p> 
             </div>
         <div class="settings_container">
-            <div class="setting">
-                <h1>Setting 1</h1>
-                <p>Im text</p>
-                <p>Mo text</p>
+            <div class="setting general">
+                <h1>General</h1>
+                <p>Extension status: <button class="button_enabled" setting="enabled" state="true">Enabled</button></p> <!-- Let script render enabled/disabled states-->
             </div> 
+            <button class="apply">Apply</button>
         </div>
     </body>
 </html>
