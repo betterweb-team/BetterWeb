@@ -1,3 +1,17 @@
 /**
  * Place your custom CSS styles here.
  **/
+ div#betterweb-injected-banner {
+     position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #DDEEEE;
+        width: 100%;
+        z-index: 999999999999
+      }
+      div#betterweb-injected-banner-content {
+        width: 800px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #000;
+      }
