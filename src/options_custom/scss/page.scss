@@ -4,14 +4,24 @@ sass scss/page.scss css/page.css --no-source-map --watch
 
 @import 'colorscheme';
 
-@mixin border($upordown, $thickness) {
+@mixin hover_animation($time) {
+    transition: background-color $time, border-color $time * 0.75, color $time * 0.75 ease-out;
+    &:hover {
+        background-color: $heading1;
+        border-color: $heading1;
+        color: $bg2;
+    }
+}
+
+@mixin border($upordown, $thickness, $borderradius) {
     border-color: $heading2;
     border-style: solid;
+    border-radius: $borderradius;
     @if $upordown == both {
         border-width: $thickness;
     } @else if $upordown == up {
         border-width: $thickness $thickness 0 $thickness;
-    } @else if $upordown == down{
+    } @else if $upordown == down {
         border-width: 0 $thickness $thickness $thickness;
     }
 }
@@ -47,7 +57,7 @@ h1 {
     font-family: modern;
 }
 
-p {
+p, button {
     font: 20px quicksand;
     color: $text;
 }
@@ -56,23 +66,20 @@ p {
     .title {
         font-size: 40px;
     }
+
     p {
         font-size: 15px;
     }
-}
 
-@media screen and (min-width: 2000px) {
-    body {
-        margin: 0 200px
+    .setting h1 {
+        font-size: 25px;
     }
 }
 
-
 .info {
-    @include border(up, 2px);
+    @include border(up, 2px, 25px 25px 0 0);
     padding: 5%;
     background-color: lighten($heading1,60);
-    border-radius: 25px 25px 0 0;
     text-align: left;
     display: flex;
 
@@ -88,15 +95,17 @@ p {
 }
 
 .settings_container {
-    @include border(down, 2px);
+    @include border(down, 2px, 0 0 25px 25px);
     background-color: $bg2;
-    border-radius: 0 0 25px 25px;
     text-align: left;
     padding: 5% 5% 15% 5%;
     margin-bottom: 75px;
+    $left_margin: 54px;
 
     .setting {
-        margin-left: 50px;
+        padding: 6px 0 16px $left_margin;
+        border-radius: 25px;
+        border: 1px solid lightGrey;
 
         h1 {
             color: $heading2;
@@ -104,7 +113,24 @@ p {
         }
 
         p {
-            margin: 4px 0;
+            margin: auto 0;
         }
+
+        button { 
+            @include border(both, 1px, 4px);
+            background-color: $bg2;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+    }
+
+    .apply {
+        @include border(both, 1px, 4px);
+        @include hover_animation(0.3s);
+        margin: 3% 0 1% $left_margin;
+        background-color: $bg2;
+        font-size: 30px;
+        padding: 3px 7px;
+        color: $heading2;
     }
 }

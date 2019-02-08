@@ -32,7 +32,7 @@ h1 {
   font-family: modern;
 }
 
-p {
+p, button {
   font: 20px quicksand;
   color: black;
 }
@@ -45,19 +45,18 @@ p {
   p {
     font-size: 15px;
   }
-}
-@media screen and (min-width: 2000px) {
-  body {
-    margin: 0 200px;
+
+  .setting h1 {
+    font-size: 25px;
   }
 }
 .info {
   border-color: #ddb520;
   border-style: solid;
+  border-radius: 25px 25px 0 0;
   border-width: 2px 2px 0 2px;
   padding: 5%;
   background-color: #c1d3f2;
-  border-radius: 25px 25px 0 0;
   text-align: left;
   display: flex;
 }
@@ -73,20 +72,48 @@ p {
 .settings_container {
   border-color: #ddb520;
   border-style: solid;
+  border-radius: 0 0 25px 25px;
   border-width: 0 2px 2px 2px;
   background-color: white;
-  border-radius: 0 0 25px 25px;
   text-align: left;
   padding: 5% 5% 15% 5%;
   margin-bottom: 75px;
 }
 .settings_container .setting {
-  margin-left: 50px;
+  padding: 6px 0 16px 54px;
+  border-radius: 25px;
+  border: 1px solid lightGrey;
 }
 .settings_container .setting h1 {
   color: #ddb520;
   font-size: 30px;
 }
 .settings_container .setting p {
-  margin: 4px 0;
+  margin: auto 0;
+}
+.settings_container .setting button {
+  border-color: #ddb520;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  background-color: white;
+  font-size: 20px;
+  margin-left: 5px;
+}
+.settings_container .apply {
+  border-color: #ddb520;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  transition: background-color 0.3s, border-color 0.225s, color 0.225s ease-out;
+  margin: 3% 0 1% 54px;
+  background-color: white;
+  font-size: 30px;
+  padding: 3px 7px;
+  color: #ddb520;
+}
+.settings_container .apply:hover {
+  background-color: #16366b;
+  border-color: #16366b;
+  color: white;
 }
