@@ -1,0 +1,30 @@
+/* To transpile to css, run
+sass scss/page.scss css/page.css --no-source-map --watch
+*/
+
+@import 'colorscheme';
+
+@font-face {
+    font-family: modern;
+    src: url('../fonts/majormonodisplay.ttf')
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url('../fonts/quicksand.ttf')
+}
+
+#mainPopup {
+    padding: 10px;
+    height: 200px;
+    width: 400px;
+}
+
+h1 {
+    font-size: 2em;
+    font-family: modern;
+}
+
+p {
+    font-family: quicksand;
+}
