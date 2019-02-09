@@ -2,16 +2,16 @@
 sass scss/page.scss css/page.css --no-source-map --watch
 */
 
-@import 'colorscheme';
+@import '../../shared/scss/colorscheme.scss';
 
 @font-face {
     font-family: modern;
-    src: url('../fonts/majormonodisplay.ttf')
+    src: url('../../shared/fonts/majormonodisplay.ttf')
 }
 
 @font-face {
     font-family: quicksand;
-    src: url('../fonts/quicksand.ttf')
+    src: url('../../shared/fonts/quicksand.ttf')
 }
 
 #mainPopup {

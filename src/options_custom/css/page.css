@@ -5,11 +5,11 @@ sass scss/page.scss css/page.css --no-source-map --watch
 /* RGB */
 @font-face {
   font-family: modern;
-  src: url("../fonts/majormonodisplay.ttf");
+  src: url("../../shared/fonts/majormonodisplay.ttf");
 }
 @font-face {
   font-family: quicksand;
-  src: url("../fonts/quicksand.ttf");
+  src: url("../../shared/fonts/quicksand.ttf");
 }
 html {
   text-align: center;
@@ -83,6 +83,7 @@ p, button {
   padding: 6px 0 16px 54px;
   border-radius: 25px;
   border: 1px solid lightGrey;
+  /* Checkbox */
 }
 .settings_container .setting h1 {
   color: #ddb520;
@@ -99,6 +100,9 @@ p, button {
   background-color: white;
   font-size: 20px;
   margin-left: 5px;
+}
+.settings_container .setting .checkbox[state=true] {
+  background-color: green;
 }
 .settings_container .apply {
   border-color: #ddb520;

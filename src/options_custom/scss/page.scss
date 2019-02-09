@@ -2,7 +2,7 @@
 sass scss/page.scss css/page.css --no-source-map --watch
 */
 
-@import 'colorscheme';
+@import '../../shared/scss/colorscheme.scss';
 
 @mixin hover_animation($time) {
     transition: background-color $time, border-color $time * 0.75, color $time * 0.75 ease-out;
@@ -28,12 +28,12 @@ sass scss/page.scss css/page.css --no-source-map --watch
 
 @font-face {
     font-family: modern;
-    src: url('../fonts/majormonodisplay.ttf')
+    src: url('../../shared/fonts/majormonodisplay.ttf')
 }
 
 @font-face {
     font-family: quicksand;
-    src: url('../fonts/quicksand.ttf')
+    src: url('../../shared/fonts/quicksand.ttf')
 }
 
 html {
@@ -121,6 +121,11 @@ p, button {
             background-color: $bg2;
             font-size: 20px;
             margin-left: 5px;
+        }
+        /* Checkbox */
+        .checkbox[state=true] {
+            background-color: green;
+            
         }
     }
 

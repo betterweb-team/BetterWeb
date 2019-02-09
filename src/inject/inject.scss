@@ -2,7 +2,7 @@
 sass inject.scss inject.css --no-source-map --watch
 */
 
-@import 'colorscheme';
+@import '../shared/scss/colorscheme.scss';
 
 div #betterweb-injected-banner {
     position: absolute;
