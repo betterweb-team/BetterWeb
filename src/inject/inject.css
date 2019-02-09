@@ -1,17 +1,20 @@
-/**
- * Place your custom CSS styles here.
- **/
- div#betterweb-injected-banner {
-     position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #DDEEEE;
-        width: 100%;
-        z-index: 999999999999
-      }
-      div#betterweb-injected-banner-content {
-        width: 800px;
-        margin: 0 auto;
-        padding: 10px;
-        border: 1px solid #000;
-      }
+/* To transpile to css, run
+sass inject.scss inject.css --no-source-map --watch
+*/
+/* Coolors Exported Palette - coolors.co/000000-16366b-d3c9c9-ddb520-ffffff */
+/* RGB */
+div #betterweb-injected-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  z-index: 999999999999;
+}
+
+div #betterweb-injected-banner-content {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #16366b;
+}
