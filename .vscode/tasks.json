@@ -1,0 +1,14 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "command": "cd src/options_custom && sass scss/page.scss css/page.css --no-source-map --watch",
+            "label": "Compile sass in options_custom",
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}
