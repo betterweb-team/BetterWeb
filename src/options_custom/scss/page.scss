@@ -122,10 +122,22 @@ p, button {
             font-size: 20px;
             margin-left: 5px;
         }
-        /* Checkbox */
-        .checkbox[state=true] {
-            background-color: green;
-            
+
+        .checkbox {
+            transition: border-color 0.5s ease-in-out, color 0.5s;
+            background-color: $bg2;
+            border-width: 1.5px;
+
+            &[state=true] {
+                border-color: $checkbox_enabled;
+                color: $checkbox_enabled;
+            }
+
+            &[state=false] {
+                border-color: $checkbox_disabled;
+                color: $checkbox_disabled;
+            }
+
         }
     }
 
@@ -135,7 +147,7 @@ p, button {
         margin: 3% 0 1% $left_margin;
         background-color: $bg2;
         font-size: 30px;
-        padding: 3px 7px;
+        padding: 3px 15px;
         color: $heading2;
     }
 }

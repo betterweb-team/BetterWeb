@@ -2,7 +2,7 @@
 sass scss/page.scss css/page.css --no-source-map --watch
 */
 /* Coolors Exported Palette - coolors.co/000000-16366b-d3c9c9-ddb520-ffffff */
-/* RGB */
+/* Settings */
 @font-face {
   font-family: modern;
   src: url("../../shared/fonts/majormonodisplay.ttf");
@@ -83,7 +83,6 @@ p, button {
   padding: 6px 0 16px 54px;
   border-radius: 25px;
   border: 1px solid lightGrey;
-  /* Checkbox */
 }
 .settings_container .setting h1 {
   color: #ddb520;
@@ -101,8 +100,18 @@ p, button {
   font-size: 20px;
   margin-left: 5px;
 }
+.settings_container .setting .checkbox {
+  transition: border-color 0.5s ease-in-out, color 0.5s;
+  background-color: white;
+  border-width: 1.5px;
+}
 .settings_container .setting .checkbox[state=true] {
-  background-color: green;
+  border-color: green;
+  color: green;
+}
+.settings_container .setting .checkbox[state=false] {
+  border-color: red;
+  color: red;
 }
 .settings_container .apply {
   border-color: #ddb520;
@@ -113,7 +122,7 @@ p, button {
   margin: 3% 0 1% 54px;
   background-color: white;
   font-size: 30px;
-  padding: 3px 7px;
+  padding: 3px 15px;
   color: #ddb520;
 }
 .settings_container .apply:hover {
