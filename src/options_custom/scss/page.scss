@@ -4,12 +4,12 @@ sass scss/page.scss css/page.css --no-source-map --watch
 
 @import '../../shared/scss/colorscheme.scss';
 
-@mixin hover_animation($time) {
+@mixin hover_animation($time, $bg, $color) {
     transition: background-color $time, border-color $time * 0.75, color $time * 0.75 ease-out;
     &:hover {
-        background-color: $heading1;
-        border-color: $heading1;
-        color: $bg2;
+        background-color: $bg;
+        border-color: $color;
+        color: $color;
     }
 }
 
@@ -131,11 +131,17 @@ p, button {
             &[state=true] {
                 border-color: $checkbox_enabled;
                 color: $checkbox_enabled;
+                &::before {
+                    content: "Enabled";
+                }
             }
 
             &[state=false] {
                 border-color: $checkbox_disabled;
                 color: $checkbox_disabled;
+                &::before {
+                    content: "Disabled";
+                }
             }
 
         }
@@ -143,10 +149,10 @@ p, button {
 
     .apply {
         @include border(both, 1px, 4px);
-        @include hover_animation(0.3s);
+        @include hover_animation(0.3s, $heading2, $bg2);
         margin: 3% 0 1% $left_margin;
         background-color: $bg2;
-        font-size: 30px;
+        font-size: 25px;
         padding: 3px 15px;
         color: $heading2;
     }

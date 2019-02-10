@@ -109,9 +109,15 @@ p, button {
   border-color: green;
   color: green;
 }
+.settings_container .setting .checkbox[state=true]::before {
+  content: "Enabled";
+}
 .settings_container .setting .checkbox[state=false] {
   border-color: red;
   color: red;
+}
+.settings_container .setting .checkbox[state=false]::before {
+  content: "Disabled";
 }
 .settings_container .apply {
   border-color: #ddb520;
@@ -121,12 +127,12 @@ p, button {
   transition: background-color 0.3s, border-color 0.225s, color 0.225s ease-out;
   margin: 3% 0 1% 54px;
   background-color: white;
-  font-size: 30px;
+  font-size: 25px;
   padding: 3px 15px;
   color: #ddb520;
 }
 .settings_container .apply:hover {
-  background-color: #16366b;
-  border-color: #16366b;
+  background-color: #ddb520;
+  border-color: white;
   color: white;
 }
