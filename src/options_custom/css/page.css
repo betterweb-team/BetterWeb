@@ -106,15 +106,27 @@ p, button {
   border-width: 1.5px;
 }
 .settings_container .setting .checkbox[state=true] {
+  transition: background-color 0.5s, border-color 0.375s, color 0.375s ease-out;
   border-color: green;
   color: green;
+}
+.settings_container .setting .checkbox[state=true]:hover {
+  background-color: green;
+  border-color: white;
+  color: white;
 }
 .settings_container .setting .checkbox[state=true]::before {
   content: "Enabled";
 }
 .settings_container .setting .checkbox[state=false] {
+  transition: background-color 0.5s, border-color 0.375s, color 0.375s ease-out;
   border-color: red;
   color: red;
+}
+.settings_container .setting .checkbox[state=false]:hover {
+  background-color: red;
+  border-color: white;
+  color: white;
 }
 .settings_container .setting .checkbox[state=false]::before {
   content: "Disabled";

@@ -129,6 +129,7 @@ p, button {
             border-width: 1.5px;
 
             &[state=true] {
+                @include hover_animation(0.5s, $checkbox_enabled, $bg2);
                 border-color: $checkbox_enabled;
                 color: $checkbox_enabled;
                 &::before {
@@ -137,6 +138,7 @@ p, button {
             }
 
             &[state=false] {
+                @include hover_animation(0.5s, $checkbox_disabled, $bg2);
                 border-color: $checkbox_disabled;
                 color: $checkbox_disabled;
                 &::before {
