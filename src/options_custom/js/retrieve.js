@@ -23,7 +23,7 @@ const retrieve = {
 
     getStoredSettings: async function getStoredSettings(settings) {
         res = {};
-        for (i in settings) {
+        for (var i in settings) {
             v = settings[i];
             var setting = await new Promise(function requestSettings(resolve) {
                 chrome.storage.local.get([v], function resolveResults(results) {

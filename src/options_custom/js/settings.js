@@ -6,7 +6,7 @@ const SETTINGS = {
 
     getSettings: function getSettings() {
         var settings = {};
-        for (element of document.querySelectorAll("[setting]")) {
+        for (var element of document.querySelectorAll("[setting]")) {
             settings[element.getAttribute("setting")] = element.getAttribute("state");
         };
 
