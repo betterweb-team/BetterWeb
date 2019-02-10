@@ -8,9 +8,12 @@
         <link id="favicon" rel="icon" href="icon.png">
         <link rel="stylesheet" href="css/page.css" media="screen">
         
-        <!-- JavaScript -->
+        <!-- JS Modules -->
         <script src="js/settings.js"></script>
         <script src="js/retrieve.js"></script>
+        <script src="js/startup.js"></script>
+
+        <!-- JS -->
         <script src="js/index.js"></script>
     </head>
     <body>
@@ -22,7 +25,7 @@
         <div class="settings_container">
             <div class="setting general">
                 <h1>General</h1>
-                <p>Extension status: <button class="button_enabled" setting="enabled" state="true">Enabled</button></p> <!-- Let script render enabled/disabled states-->
+                <p>Extension status: <button class="button_enabled checkbox" setting="enabled" default="true">Enabled</button></p>
             </div> 
             <button class="apply">Apply</button>
         </div>
