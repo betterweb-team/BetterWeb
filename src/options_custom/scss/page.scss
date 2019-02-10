@@ -4,6 +4,7 @@ sass scss/page.scss css/page.css --no-source-map --watch
 
 @import '../../shared/scss/colorscheme.scss';
 
+/* Mixins */
 @mixin hover_animation($time, $bg, $color) {
     transition: background-color $time, border-color $time * 0.75, color $time * 0.75 ease-out;
     &:hover {
@@ -104,6 +105,7 @@ p, button {
 
     .setting {
         padding: 6px 0 16px $left_margin;
+        margin-bottom: 15px;
         border-radius: 25px;
         border: 1px solid lightGrey;
 
@@ -145,7 +147,6 @@ p, button {
                     content: "Disabled";
                 }
             }
-
         }
     }
 
