@@ -1,3 +1,20 @@
 {
+    "meta": {
+        "version": "0.1",
+        "publisher": "BetterWeb Official",
+        "source": "https://mediabiasfactcheck.com"
+    },
+    "media_urls": [
+        {
+            "name": "New York Times",
+            "bias": "LEFTCENTER",
+            "urls": ["https://nytimes.com"],
+            "lastupdate": "6/18/2018",
+            "summary": "Overall, we rate the New York Times Left-Center biased based on word and story selection that moderately favors the left, but highly factual and considered one of the most reliable sources for information due to proper sourcing and well respected journalists/editors."
+        },
+        {
+            
+        }
 
+    ]
 }
