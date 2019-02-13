@@ -15,7 +15,7 @@ chrome.extension.onMessage.addListener(
 chrome.runtime.onInstalled.addListener(function(details){
   if(details.reason == "install"){
       // TODO move media_urls.json to LocalStorage
-      const media_urls = chrome.runtime.getURL('src/resources/media_urls.json')
+      const media_urls = chrome.runtime.getURL('src/shared/json/media_urls.json.min')
       fetch(media_urls)
         .then(function (response) {
             return response.json();
