@@ -4,7 +4,7 @@ sass inject.scss inject.css --no-source-map --watch
 
 @import '../shared/scss/colorscheme.scss';
 
-div #betterweb-injected-banner {
+#betterweb-injected-banner {
     position: absolute;
     top: 0;
     left: 0;
@@ -12,9 +12,13 @@ div #betterweb-injected-banner {
     width: 100%;
     z-index: 999999999999;
 }
-div #betterweb-injected-banner-content {
-    width: 800px;
+#betterweb-injected-banner-content {
+    width: 100%;
     margin: 0 auto;
     padding: 10px;
     border: 1px solid $heading1;
+}
+
+#betterweb-injected-banner-heading {
+    
 }

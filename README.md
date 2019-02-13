@@ -19,4 +19,4 @@ Thank you for building a better and more democratic web. Please submit your pull
 The current version of `media_urls.json` and `media_urls.json.min` is based on the works of [JeffreyATM/mbfc_crawler](https://github.com/JeffreyATW/mbfc_crawler). Additional license restrictions might apply.
 
 # License
-It should be GPL, but I am too lazy to add it.
+GPL License.

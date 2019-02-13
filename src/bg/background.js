@@ -21,7 +21,8 @@ chrome.runtime.onInstalled.addListener(function(details){
             return response.json();
         })
         .then(function (json) {
-            localStorage.setItem('media_urls', JSON.stringify(json));
+            //localStorage.setItem('media_urls', JSON.stringify(json));
+            chrome.storage.local.set({'media_urls': JSON.stringify(json)});
         });
 
   }
