@@ -29,11 +29,6 @@
         ],
         "css": [
           "src/inject/inject.css"
-        ]
-      },
-      {
-        "matches": [
-          "<all_urls>"
         ],
         "js": [
           "src/inject/inject.js"
