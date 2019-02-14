@@ -21,7 +21,11 @@
     "url": "https://github.com/HaojiXu/BetterWeb/issues"
   },
   "homepage": "https://github.com/HaojiXu/BetterWeb#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@postlight/mercury-parser": "^1.1.1",
+    "mercury-parser": "^1.0.0",
+    "node-readability": "^3.0.0"
+  },
   "devDependencies": {
     "sass": "^1.17.0"
   }
