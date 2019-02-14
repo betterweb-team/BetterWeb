@@ -23,17 +23,11 @@
             }
         },
         {
-            "label": "Compile all sass",
-            "dependsOn": [
-                "Compile sass in options_custom"
-            ],
-            "problemMatcher": []
-        },
-        {
             "label": "Build",
             "type": "shell",
+            "command": "",
             "dependsOn": [
-                "Compile all sass"
+                "Compile sass in options_custom"
             ],
             "problemMatcher": [],
             "group": {
