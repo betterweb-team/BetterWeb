@@ -31,6 +31,7 @@
           "src/inject/inject.css"
         ],
         "js": [
+          "src/shared/js/retrieve.js",
           "src/inject/inject.js"
         ]
       }
