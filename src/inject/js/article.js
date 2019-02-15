@@ -1,4 +1,4 @@
-import {Mercury} from '../shared/js/mercury.web.js';
+import {Mercury} from '../../shared/js/mercury.web.js';
 
 window.onload = function () {
     Mercury.parse().then(result => {

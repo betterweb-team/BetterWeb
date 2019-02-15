@@ -32,13 +32,13 @@
         ],
         "js": [
           "src/shared/js/retrieve.js",
-          "src/inject/inject.js"
+          "src/inject/js/article.js",
+          "src/inject/js/inject.js"
         ]
       }
     ],
     "web_accessible_resources": [
-        "src/shared/*",
-        "src/inject/article.js"
+        "src/shared/*"
     ]
 
 }
