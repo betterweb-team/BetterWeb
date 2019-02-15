@@ -1,7 +1,7 @@
 import {Mercury} from '../../shared/js/mercury.web.js';
 
-window.onload = function () {
+window.addEventListener('load',function () {
     Mercury.parse().then(result => {
         document.write(result.content);
     });
-};
+});

@@ -28,7 +28,7 @@
             "<all_urls>"
         ],
         "css": [
-          "src/inject/inject.css"
+          "src/inject/css/inject.css"
         ],
         "js": [
           "src/shared/js/retrieve.js",
