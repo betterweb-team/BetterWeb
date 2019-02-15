@@ -5,10 +5,35 @@
     "tasks": [
         {
             "type": "shell",
-            "command": "cd src/options_custom && sass scss/page.scss css/page.css --no-source-map --watch",
+            "command": "sass scss/page.scss css/page.css --no-source-map",
             "label": "Compile sass in options_custom",
-            "isBackground": true,
-            "problemMatcher": []
+            "options": {
+                "cwd": "src/options_custom"
+            },
+            "problemMatcher": [
+                "$node-sass"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "",
+            "dependsOn": [
+                "Compile sass in options_custom"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

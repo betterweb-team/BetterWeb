@@ -91,7 +91,7 @@ p, button {
   font-size: 30px;
 }
 .settings_container .setting p {
-  margin: auto 0;
+  margin: 7px 0;
 }
 .settings_container .setting button {
   border-color: #ddb520;
