@@ -17,7 +17,7 @@ function getBiasData(origin) {
 }
 
 function inject(mediafacts) {
-    var htmlString = `<div id="betterweb-injected-banner"><div id="betterweb-injected-banner-content">'+'Bias: '+mediafacts.bias+', factual: '+mediafacts.factual+'</div></div>`
+    var htmlString = `<div id="betterweb-injected-banner"><div id="betterweb-injected-banner-content">Bias: ${mediafacts.bias}, factual: ${mediafacts.factual}</div></div>`
     document.body.insertAdjacentHTML('beforeend', htmlString)
 }
 
@@ -32,4 +32,4 @@ chrome.extension.sendMessage({}, function() { // DOM is not available without th
     });
 })
 
-//injectAnalytics();
+injectAnalytics();
