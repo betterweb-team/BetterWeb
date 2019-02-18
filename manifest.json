@@ -31,7 +31,9 @@
           "src/inject/css/inject.css"
         ],
         "js": [
+          "src/shared/js/mercury.web.js",
           "src/shared/js/retrieve.js",
+          "src/inject/js/article.js",
           "src/inject/js/inject.js" 
         ]
       }
