@@ -12,14 +12,14 @@
             },
             "problemMatcher": [
                 "$node-sass"
-            ],
-            "presentation": {
-                "echo": true,
-                "reveal": "never",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
+            ]
+        },
+        {
+            "type": "shell",
+            "command": "sass scss/inject.scss css/inject.css --no-source-map",
+            "label": "Compile sass in inject",
+            "options": {
+                "cwd": "src/inject"
             }
         },
         {
@@ -27,13 +27,14 @@
             "type": "shell",
             "command": "",
             "dependsOn": [
-                "Compile sass in options_custom"
+                "Compile sass in options_custom",
+                "Compile sass in inject"
             ],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        }
+        },
     ]
 }
