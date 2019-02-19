@@ -150,3 +150,26 @@ p, button {
   border-color: white;
   color: white;
 }
+
+/*
+Fading text that displays when the settings are applied
+*/
+
+.fade_out_transition{
+  transition: opacity 2s;
+}
+
+.settings_applied_message{
+  padding-left: 50px;
+  font: 20px quicksand;
+  color: green;
+}
+
+/*
+Smaller font for descriptions
+*/
+
+.small_text{
+  font-size: 13.5px;
+  color: #222222;
+}
