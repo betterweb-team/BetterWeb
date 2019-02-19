@@ -1,8 +1,4 @@
-/* To transpile to css, run
-sass inject.scss inject.css --no-source-map --watch
-*/
-
-@import '../shared/scss/colorscheme.scss';
+@import '../../shared/scss/colorscheme.scss';
 
 #betterweb-injected-banner {
     position: absolute;

@@ -27,6 +27,7 @@ sass scss/page.scss css/page.css --no-source-map --watch
     }
 }
 
+/* Fonts */
 @font-face {
     font-family: modern;
     src: url('../../shared/fonts/majormonodisplay.ttf')
@@ -35,6 +36,19 @@ sass scss/page.scss css/page.css --no-source-map --watch
 @font-face {
     font-family: quicksand;
     src: url('../../shared/fonts/quicksand.ttf')
+}
+
+/* Animations */
+@keyframes fade_in_out {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 html {
@@ -148,6 +162,13 @@ p, button {
                 }
             }
         }
+
+        .setting_desciption {
+            font-size: 13.5px;
+            color: lighten($text, 60);
+        }
+
+
     }
 
     .apply {
@@ -158,5 +179,19 @@ p, button {
         font-size: 25px;
         padding: 3px 15px;
         color: $heading2;
+    }
+
+    .settings_applied_message {
+        margin-left: $left_margin;
+        color: $heading2;
+        opacity: 0;
+        &::before {
+            content: "Settings Applied!";
+        }
+    }
+
+    .fade_in_out {
+        animation-name: fade_in_out;
+        animation-duration: 2s;
     }
 }
