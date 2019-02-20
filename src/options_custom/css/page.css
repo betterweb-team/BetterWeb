@@ -146,9 +146,9 @@ p, button {
 .settings_container .setting .checkbox[state=false]::before {
   content: "Disabled";
 }
-.settings_container .setting .setting_desciption {
+.settings_container .setting .setting_description {
   font-size: 13.5px;
-  color: #999999;
+  color: #666666;
 }
 .settings_container .apply {
   border-color: #ddb520;

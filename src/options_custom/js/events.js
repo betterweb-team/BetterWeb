@@ -13,17 +13,20 @@ window.addEventListener('load', function main() {
     }
 
     // Apply button events
-    document.querySelector(".apply").addEventListener("click", function(e) {
+    var applyButton = document.querySelector(".apply");
+    var settingsAppliedMessage = document.querySelector(".settings_applied_message");
+
+    applyButton.addEventListener("click", function(e) {
         var settings = SETTINGS.getSettings();
         retrieve.setSettings(settings)
     });
 
-    document.querySelector(".settings_applied_message").addEventListener("animationend", function(e) {
+    settingsAppliedMessage.addEventListener("animationend", function(e) {
         this.setAttribute("class", "settings_applied_message");
     });
 
-    document.querySelector(".apply").addEventListener("click", function(e) {
-        document.querySelector(".settings_applied_message").setAttribute("class","settings_applied_message fade_in_out");
+    applyButton.addEventListener("click", function(e) {
+        settingsAppliedMessage.setAttribute("class", "settings_applied_message fade_in_out");
     });
 });
 
