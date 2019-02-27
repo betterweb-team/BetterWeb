@@ -23,12 +23,21 @@
             }
         },
         {
+            "type": "shell",
+            "command": "sass scss/page.scss css/page.css --no-source-map",
+            "label": "Compile sass in page_action",
+            "options": {
+                "cwd": "src/page_action"
+            }
+        },
+        {
             "label": "Build",
             "type": "shell",
             "command": "",
             "dependsOn": [
                 "Compile sass in options_custom",
-                "Compile sass in inject"
+                "Compile sass in inject",
+                "Compile sass in page_action"
             ],
             "problemMatcher": [],
             "group": {
