@@ -1,0 +1,26 @@
+@mixin line($top, $left, $width, $orientation) {
+    position: relative;
+    height: $width;
+    top: $top;
+    left: $left;
+    @if $orientation == "vertical" {
+        width: $width;
+        height: 100%;
+    } @else {
+        height: $width;
+        width: 100%;
+    }
+}
+
+@mixin hover_animation($time, $bg, $color) {
+    transition: background-color $time, border-color $time * 0.75, color $time * 0.75 ease-out;
+    &:hover {
+        background-color: $bg;
+        border-color: $color;
+        color: $color;
+    }
+}
+
+.hor_line_center {
+    @include line(45%, 0, 3px, "horizontal")
+}

@@ -2,8 +2,10 @@
 sass scss/page.scss css/page.css --no-source-map --watch
 */
 
-@import '../../shared/scss/colorscheme.scss';
 
+/* For deafult state */
+
+@import '../../shared/scss/colorscheme.scss';
 @font-face {
     font-family: modern;
     src: url('../../shared/fonts/majormonodisplay.ttf')
@@ -23,8 +25,13 @@ sass scss/page.scss css/page.css --no-source-map --watch
 h1 {
     font-size: 2em;
     font-family: modern;
+    color: $heading1;
 }
 
 p {
     font-family: quicksand;
+    color: $text;
 }
+
+
+/* For popup state */
