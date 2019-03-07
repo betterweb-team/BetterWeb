@@ -19,28 +19,23 @@
         "default_popup": "src/page_action/page_action.html"
     },
     "permissions": [
-        "activeTab",
         "storage"
     ],
-    "content_scripts": [
-      {
+    "content_scripts": [{
         "matches": [
             "<all_urls>"
         ],
-        "css": [
-          "src/inject/css/inject.css"
-        ],
         "js": [
-          "src/shared/js/mercury.web.js",
-          "src/shared/js/retrieve.js",
-          "src/inject/js/article.js",
-          "src/inject/js/inject.js" 
+            "src/shared/js/mercury.web.js",
+            "src/shared/js/retrieve.js",
+            "src/inject/js/article.js",
+            "src/inject/js/inject.js"
         ]
-      }
-    ],
+    }],
     "web_accessible_resources": [
         "src/shared/*",
-        "src/inject/js/article.js"
+        "src/inject/*",
+        "src/page_action/*"
     ]
 
 }
