@@ -3,17 +3,9 @@ sass scss/page.scss css/page.css --no-source-map --watch
 */
 
 @import '../../shared/scss/colorscheme.scss';
+@import "../../shared/scss/general.scss";
 
 /* Mixins */
-@mixin hover_animation($time, $bg, $color) {
-    transition: background-color $time, border-color $time * 0.75, color $time * 0.75 ease-out;
-    &:hover {
-        background-color: $bg;
-        border-color: $color;
-        color: $color;
-    }
-}
-
 @mixin border($upordown, $thickness, $borderradius) {
     border-color: $heading2;
     border-style: solid;
