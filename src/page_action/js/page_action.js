@@ -15,7 +15,15 @@ function getBiasData(hostName) {
 async function renderPopup(data) {
     var biasData = await getBiasData(data.hostName);
     if (biasData) {
-        document.querySelector("html").innerHTML = biasData.bias + " " + biasData.factual;
+        const body = document.querySelector("body")
+        body.innerHTML =
+            `
+        <h1>${biasData.name}</h1>
+        <p>Bias: ${biasData.bias}</p><br>
+        <p>Reliability: ${biasData.factual}</p>
+        `;
+
+        body.setAttribute("id", "biasPanel");
     }
 
 }

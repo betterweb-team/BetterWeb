@@ -2,9 +2,6 @@
 sass scss/page.scss css/page.css --no-source-map --watch
 */
 
-
-/* For deafult state */
-
 @import '../../shared/scss/colorscheme.scss';
 @font-face {
     font-family: modern;
@@ -16,22 +13,45 @@ sass scss/page.scss css/page.css --no-source-map --watch
     src: url('../../shared/fonts/quicksand.ttf')
 }
 
-#mainPopup {
+body {
     padding: 10px;
     height: 200px;
     width: 400px;
 }
 
-h1 {
-    font-size: 2em;
-    font-family: modern;
-    color: $heading1;
-}
 
-p {
-    font-family: quicksand;
-    color: $text;
+/* For deafult popup */
+
+#defaultPopup {
+    body {
+        padding: 10px;
+        height: 200px;
+        width: 400px;
+    }
+    h1 {
+        font-size: 2em;
+        font-family: modern;
+        color: $heading1;
+    }
+    p {
+        font-family: quicksand;
+        color: $text;
+    }
 }
 
 
 /* For popup state */
+
+#biasPanel {
+    text-align: center;
+    background-color: lighten($bg1, 30);
+    h1 {
+        font-size: 2em;
+        font-family: modern;
+        color: $heading2;
+    }
+    p {
+        font-family: quicksand;
+        color: $text;
+    }
+}
