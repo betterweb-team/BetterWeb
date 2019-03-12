@@ -3,6 +3,7 @@ sass scss/page.scss css/page.css --no-source-map --watch
 */
 
 @import '../../shared/scss/colorscheme.scss';
+@import '../../shared/scss/general.scss';
 @font-face {
     font-family: modern;
     src: url('../../shared/fonts/majormonodisplay.ttf')
@@ -14,28 +15,25 @@ sass scss/page.scss css/page.css --no-source-map --watch
 }
 
 body {
-    padding: 10px;
-    height: 200px;
-    width: 400px;
+    p,
+    div {
+        font-family: quicksand;
+        color: $text;
+        font-size: 1em;
+    }
 }
 
 
-/* For deafult popup */
+/* For default popup */
 
 #defaultPopup {
-    body {
-        padding: 10px;
-        height: 200px;
-        width: 400px;
-    }
+    padding: 10px;
+    height: 200px;
+    width: 400px;
     h1 {
         font-size: 2em;
         font-family: modern;
         color: $heading1;
-    }
-    p {
-        font-family: quicksand;
-        color: $text;
     }
 }
 
@@ -44,14 +42,35 @@ body {
 
 #biasPanel {
     text-align: center;
-    background-color: lighten($bg1, 30);
+    background-color: lighten($bg1, 15);
+    padding: 10px;
+    height: 300px;
+    width: 600px;
     h1 {
         font-size: 2em;
         font-family: modern;
         color: $heading2;
     }
-    p {
-        font-family: quicksand;
-        color: $text;
+    .source_bias_meter {
+        padding: 0 25px;
+        margin: 5px auto;
+        background-color: $bg1;
+        border-radius: 8px;
+        width: 470px;
+        height: 125px;
+        .hor_line {
+            @include line(50%,
+            0,
+            3px,
+            'horizontal');
+            background-color: $bg2;
+        }
+        .bias_message {
+            position: relative;
+            top: 50%;
+            color: $heading1;
+            font-size: 1.5em;
+            width: 100px;
+        }
     }
 }

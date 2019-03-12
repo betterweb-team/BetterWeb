@@ -1,12 +1,14 @@
+$transparent: rgba(0, 0, 0, 0);
 @mixin line($top, $left, $width, $orientation) {
     position: relative;
     height: $width;
     top: $top;
     left: $left;
-    @if $orientation == "vertical" {
+    @if $orientation=="vertical" {
         width: $width;
         height: 100%;
-    } @else {
+    }
+    @else {
         height: $width;
         width: 100%;
     }

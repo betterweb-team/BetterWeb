@@ -13,17 +13,44 @@ function getBiasData(hostName) {
 }
 
 async function renderPopup(data) {
-    var biasData = await getBiasData(data.hostName);
+    var biasData = await getBiasData(data.hostname);
     if (biasData) {
-        const body = document.querySelector("body")
+        const body = document.querySelector("body");
         body.innerHTML =
             `
-        <h1>${biasData.name}</h1>
-        <p>Bias: ${biasData.bias}</p><br>
-        <p>Reliability: ${biasData.factual}</p>
+        <div class="source_bias">
+            <h1>Source Bias for ${biasData.name}</h1>
+            <div class="source_bias_meter">
+                <div class="hor_line"></div>
+                <div class="bias_message">
+                    &#9650 <br> ${biasData.bias}
+                </div>
+            </div>
+            <p>Reliability: ${biasData.factual}</p>
+        </div>
         `;
-
         body.setAttribute("id", "biasPanel");
+
+        //Bias meter placement
+        const bias_message = document.querySelector(".source_bias_meter .bias_message");
+        switch (biasData.bias) {
+            case "left":
+                bias_message.style.left = "-10%";
+                break;
+            case "leftcenter":
+                bias_message.style.left = "15%";
+                break;
+            case "rightcenter":
+                bias_message.style.left = "65%";
+                break;
+            case "right":
+                bias_message.style.left = "90%";
+                break;
+            default:
+                bias_message.style.left = "40%";
+                break;
+        }
+
     }
 
 }
