@@ -41,8 +41,17 @@ body {
 /* For popup state */
 
 #biasPanel {
+    $animation-duration: 0.75s;
+    @mixin panel_widget() {
+        margin: 10px auto;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 8px;
+        width: 470px;
+    }
     text-align: center;
-    background-color: lighten($bg1, 15);
+    background-color: lighten($bg1,
+    15);
     padding: 10px;
     height: 300px;
     width: 600px;
@@ -52,11 +61,8 @@ body {
         color: $heading2;
     }
     .source_bias_meter {
-        padding: 0 25px;
-        margin: 5px auto;
+        @include panel_widget();
         background-color: $bg1;
-        border-radius: 8px;
-        width: 470px;
         height: 125px;
         .hor_line {
             @include line(50%,
@@ -66,11 +72,25 @@ body {
             background-color: $bg2;
         }
         .bias_message {
+            left: 40%;
+            transition: left $animation-duration ease-out;
             position: relative;
             top: 50%;
             color: $heading1;
             font-size: 1.5em;
             width: 100px;
+        }
+    }
+    .source_reliability_container {
+        @include panel_widget();
+        transition: color $animation-duration, border-color $animation-duration;
+        color: grey;
+        border: 1px grey solid;
+        font-size: 1.5em;
+        p {
+            padding: 20px 0;
+            margin: auto 5px;
+            color: inherit;
         }
     }
 }

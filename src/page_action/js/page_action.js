@@ -26,31 +26,52 @@ async function renderPopup(data) {
                     &#9650 <br> ${biasData.bias}
                 </div>
             </div>
-            <p>Reliability: ${biasData.factual}</p>
+            <div class="source_reliability_container">
+                <p>Reliability: ${biasData.factual}</p>
+            </div>
         </div>
         `;
         body.setAttribute("id", "biasPanel");
 
-        //Bias meter placement
         const bias_message = document.querySelector(".source_bias_meter .bias_message");
-        switch (biasData.bias) {
-            case "left":
-                bias_message.style.left = "-10%";
-                break;
-            case "leftcenter":
-                bias_message.style.left = "15%";
-                break;
-            case "rightcenter":
-                bias_message.style.left = "65%";
-                break;
-            case "right":
-                bias_message.style.left = "90%";
-                break;
-            default:
-                bias_message.style.left = "40%";
-                break;
-        }
+        const reliability_container = document.querySelector(".source_reliability_container");
 
+        //Animations
+        setTimeout(() => {
+            //Bias meter placement
+            switch (biasData.bias) {
+                case "left":
+                    bias_message.style.left = "-10%";
+                    break;
+                case "leftcenter":
+                    bias_message.style.left = "15%";
+                    break;
+                case "rightcenter":
+                    bias_message.style.left = "65%";
+                    break;
+                case "right":
+                    bias_message.style.left = "90%";
+                    break;
+                default:
+                    bias_message.style.left = "40%";
+                    break;
+            }
+
+            //Reliabilty styling
+            var reliability_color;
+            switch (biasData.factual) {
+                case "HIGH":
+                    reliability_color = "green";
+                    break;
+                case "LOW":
+                    reliability_color = "red";
+                    break;
+                default:
+                    reliability_color = "yellow";
+            }
+            reliability_container.style.color = reliability_color;
+            reliability_container.style.borderColor = reliability_color;
+        }, 250);
     }
 
 }
