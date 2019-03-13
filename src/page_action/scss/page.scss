@@ -60,25 +60,33 @@ body {
         font-family: modern;
         color: $heading2;
     }
-    .source_bias_meter {
+    .source_bias_container {
+        $vert_padding: 10px;
         @include panel_widget();
         background-color: $bg1;
-        height: 125px;
-        .hor_line {
-            @include line(50%,
-            0,
-            3px,
-            'horizontal');
-            background-color: $bg2;
-        }
-        .bias_message {
-            left: 40%;
-            transition: left $animation-duration ease-out;
-            position: relative;
-            top: 50%;
-            color: $heading1;
+        padding-top: $vert_padding;
+        padding-bottom: $vert_padding;
+        .title {
+            color: $bg2;
             font-size: 1.5em;
-            width: 100px;
+        }
+        .source_bias_meter {
+            .hor_line {
+                @include line(50%,
+                0,
+                3px,
+                'horizontal');
+                background-color: $bg2;
+            }
+            .bias_message {
+                left: 40%;
+                transition: left $animation-duration ease-out;
+                position: relative;
+                top: 50%;
+                color: $heading1;
+                font-size: 1.5em;
+                width: 100px;
+            }
         }
     }
     .source_reliability_container {

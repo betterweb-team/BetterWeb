@@ -20,10 +20,14 @@ async function renderPopup(data) {
             `
         <div class="source_bias">
             <h1>Source Bias for ${biasData.name}</h1>
-            <div class="source_bias_meter">
-                <div class="hor_line"></div>
-                <div class="bias_message">
-                    &#9650 <br> ${biasData.bias}
+            <div class="source_bias_container">
+                <p class="title">Political Bias</p>
+                <div class="source_bias_meter">
+                    
+                    <div class="hor_line"></div>
+                    <div class="bias_message">
+                        &#9650 <br> ${biasData.bias}
+                </div>
                 </div>
             </div>
             <div class="source_reliability_container">
@@ -67,7 +71,7 @@ async function renderPopup(data) {
                     reliability_color = "red";
                     break;
                 default:
-                    reliability_color = "yellow";
+                    reliability_color = "rgb(221, 181, 32)";
             }
             reliability_container.style.color = reliability_color;
             reliability_container.style.borderColor = reliability_color;
