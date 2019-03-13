@@ -2,7 +2,7 @@ var pageData = {};
 
 var hostname = location.hostname.match(/[^.]*\.[^.]{2,3}(?:\.[^.]{2,3})?$/, "")
 hostname = hostname ? hostname[0] : ""
-pageData.hostName = hostname
+pageData.hostname = hostname
 
 chrome.runtime.sendMessage({
     from: 'content',

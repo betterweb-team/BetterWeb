@@ -13,9 +13,69 @@ function getBiasData(hostName) {
 }
 
 async function renderPopup(data) {
-    var biasData = await getBiasData(data.hostName);
+    var biasData = await getBiasData(data.hostname);
     if (biasData) {
-        document.querySelector("html").innerHTML = biasData.bias + " " + biasData.factual;
+        const body = document.querySelector("body");
+        body.innerHTML =
+            `
+        <div class="source_bias">
+            <h1>Source Bias for ${biasData.name}</h1>
+            <div class="source_bias_container">
+                <p class="title">Political Bias</p>
+                <div class="source_bias_meter">
+                    
+                    <div class="hor_line"></div>
+                    <div class="bias_message">
+                        &#9650 <br> ${biasData.bias}
+                </div>
+                </div>
+            </div>
+            <div class="source_reliability_container">
+                <p>Reliability: ${biasData.factual}</p>
+            </div>
+        </div>
+        `;
+        body.setAttribute("id", "biasPanel");
+
+        const bias_message = document.querySelector(".source_bias_meter .bias_message");
+        const reliability_container = document.querySelector(".source_reliability_container");
+
+        //Animations
+        setTimeout(() => {
+            //Bias meter placement
+            switch (biasData.bias) {
+                case "left":
+                    bias_message.style.left = "-10%";
+                    break;
+                case "leftcenter":
+                    bias_message.style.left = "15%";
+                    break;
+                case "rightcenter":
+                    bias_message.style.left = "65%";
+                    break;
+                case "right":
+                    bias_message.style.left = "90%";
+                    break;
+                default:
+                    bias_message.style.left = "40%";
+                    break;
+            }
+
+            //Reliabilty styling
+            var reliability_color;
+            switch (biasData.factual) {
+                case "HIGH":
+                    reliability_color = "green";
+                    break;
+                case "LOW":
+                    reliability_color = "red";
+                    break;
+                default:
+                    reliability_color = "rgb(221, 181, 32)";
+            }
+            reliability_container.style.color = reliability_color;
+            reliability_container.style.borderColor = reliability_color;
+        }, 250);
     }
 
 }

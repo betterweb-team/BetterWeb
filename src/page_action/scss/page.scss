@@ -2,10 +2,8 @@
 sass scss/page.scss css/page.css --no-source-map --watch
 */
 
-
-/* For deafult state */
-
 @import '../../shared/scss/colorscheme.scss';
+@import '../../shared/scss/general.scss';
 @font-face {
     font-family: modern;
     src: url('../../shared/fonts/majormonodisplay.ttf')
@@ -16,22 +14,91 @@ sass scss/page.scss css/page.css --no-source-map --watch
     src: url('../../shared/fonts/quicksand.ttf')
 }
 
-#mainPopup {
+body {
+    p,
+    div {
+        font-family: quicksand;
+        color: $text;
+        font-size: 1em;
+    }
+}
+
+
+/* For default popup */
+
+#defaultPopup {
     padding: 10px;
     height: 200px;
     width: 400px;
-}
-
-h1 {
-    font-size: 2em;
-    font-family: modern;
-    color: $heading1;
-}
-
-p {
-    font-family: quicksand;
-    color: $text;
+    h1 {
+        font-size: 2em;
+        font-family: modern;
+        color: $heading1;
+    }
 }
 
 
 /* For popup state */
+
+#biasPanel {
+    $animation-duration: 0.75s;
+    @mixin panel_widget() {
+        margin: 10px auto;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 8px;
+        width: 470px;
+    }
+    text-align: center;
+    background-color: lighten($bg1,
+    15);
+    padding: 10px;
+    height: 300px;
+    width: 600px;
+    h1 {
+        font-size: 2em;
+        font-family: modern;
+        color: $heading2;
+    }
+    .source_bias_container {
+        $vert_padding: 10px;
+        @include panel_widget();
+        background-color: $bg1;
+        padding-top: $vert_padding;
+        padding-bottom: $vert_padding;
+        .title {
+            color: $bg2;
+            font-size: 1.5em;
+        }
+        .source_bias_meter {
+            .hor_line {
+                @include line(50%,
+                0,
+                3px,
+                'horizontal');
+                background-color: $bg2;
+            }
+            .bias_message {
+                left: 40%;
+                transition: left $animation-duration ease-out;
+                position: relative;
+                top: 50%;
+                color: $heading1;
+                font-size: 1.5em;
+                width: 100px;
+            }
+        }
+    }
+    .source_reliability_container {
+        @include panel_widget();
+        transition: color $animation-duration, border-color $animation-duration;
+        color: grey;
+        border: 1px grey solid;
+        font-size: 1.5em;
+        p {
+            padding: 20px 0;
+            margin: auto 5px;
+            color: inherit;
+        }
+    }
+}
