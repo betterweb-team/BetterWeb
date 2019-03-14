@@ -42,16 +42,16 @@ body {
 
 #biasPanel {
     $animation-duration: 0.75s;
+    $background-color: lighten($bg1, 15);
     @mixin panel_widget() {
         margin: 10px auto;
         padding-left: 25px;
         padding-right: 25px;
-        border-radius: 8px;
+        border-radius: 10px;
         width: 470px;
     }
     text-align: center;
-    background-color: lighten($bg1,
-    15);
+    background-color: $background-color;
     padding: 10px;
     height: 300px;
     width: 600px;
@@ -67,7 +67,7 @@ body {
         padding-top: $vert_padding;
         padding-bottom: $vert_padding;
         .title {
-            color: $bg2;
+            color: $background-color;
             font-size: 1.5em;
         }
         .source_bias_meter {
@@ -76,7 +76,7 @@ body {
                 0,
                 3px,
                 'horizontal');
-                background-color: $bg2;
+                background-color: $background-color;
             }
             .bias_message {
                 left: 40%;
