@@ -1,8 +1,11 @@
-// Mercury content extraction page
-/*
 window.addEventListener('load', function() {
-    Mercury.parse(document.URL).then(result => {
-        console.log(result);
+    try {
+        var parse = Mercury.parse(document.URL);
+    } catch (err) {
+        console.console.warn("Could not parse article");
+    }
+
+    parse.then(result => {
+        console.log("%c" + result.title, "color: green");
     });
 });
-*/
