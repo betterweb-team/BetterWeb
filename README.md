@@ -8,7 +8,7 @@ A chrome plugin that uses Machine Learning and Natural Language Process to help 
 
 # Roadmap
 - [x] Detect domain name and show their media bias #BasicFunctionality
-- [ ] Show media bias in an interactive and graphic manner #Functionality
+- [x] Show media bias in an interactive and graphic manner #Functionality
 - [ ] Detect titles and check if they match clickbait descriptions #Functionality
 - [ ] Let the user choose their own media_urls.json #Neutrality
 - [ ] Add Themes support #LookAndFeel #Minor
