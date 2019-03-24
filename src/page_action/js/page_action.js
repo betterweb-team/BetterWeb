@@ -65,9 +65,11 @@ async function renderPopup(data) {
             var reliability_color;
             switch (biasData.factual) {
                 case "HIGH":
+                case "VERY HIGH":
                     reliability_color = "green";
                     break;
                 case "LOW":
+                case "VERY LOW":
                     reliability_color = "red";
                     break;
                 default:
