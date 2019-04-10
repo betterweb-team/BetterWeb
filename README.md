@@ -2,8 +2,8 @@
 A chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.
 
 # Screenshots
-![Media Source Bias for Fox News](assets/bwscreen_fox)
-![Media Source Bias for Al Jazerra](assets/bwscreen_al)
+![Media Source Bias for Fox News](https://raw.githubusercontent.com/betterweb-team/BetterWeb/master/assets/bwscreen_fox.PNG)
+![Media Source Bias for Al Jazerra](https://raw.githubusercontent.com/betterweb-team/BetterWeb/master/assets/bwscreen_al.PNG)
 
 # Features
 - Detect and show warnings about clickbait
