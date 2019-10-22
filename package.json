@@ -4,7 +4,9 @@
   "description": "A chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-scss": "sass src/options_custom/scss/page.scss:src/options_custom/css/page.css src/page_action/scss/page.scss:src/page_action/css/page.css src/shared/scss/:src/shared/css/",
+    "build-scss-live": "sass --watch src/options_custom/scss/page.scss:src/options_custom/css/page.css src/page_action/scss/page.scss:src/page_action/css/page.css src/shared/scss/:src/shared/css/"
   },
   "repository": {
     "type": "git",
