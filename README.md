@@ -17,6 +17,11 @@ A chrome plugin that uses Machine Learning and Natural Language Process to help 
 - [ ] Let the user choose their own media_urls.json #Neutrality
 - [ ] Add Themes support #LookAndFeel #Minor
 
+# Developing (Do this if you are migrating your workspace from v0.0.1)
+run `npm install` first!
+
+Then take a look at `package.json` for a list of great scripts (documents TODO)
+
 # Contributing
 Thank you for building a better and more democratic web. Please submit your pull requests, issues to this repository or send me an email at haoji.xu@outlook.com
 

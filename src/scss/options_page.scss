@@ -1,0 +1,189 @@
+/* To transpile to css, run
+sass scss/page.scss css/page.css --no-source-map --watch
+*/
+
+@import './colorscheme.scss';
+@import './general.scss';
+
+/* Mixins */
+@mixin border($upordown, $thickness, $borderradius) {
+    border-color: $heading2;
+    border-style: solid;
+    border-radius: $borderradius;
+    @if $upordown == both {
+        border-width: $thickness;
+    } @else if $upordown == up {
+        border-width: $thickness $thickness 0 $thickness;
+    } @else if $upordown == down {
+        border-width: 0 $thickness $thickness $thickness;
+    }
+}
+
+/* Fonts */
+@font-face {
+    font-family: modern;
+    src: url('../fonts/majormonodisplay.ttf')
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url('../fonts/quicksand.ttf')
+}
+
+/* Animations */
+@keyframes fade_in_out {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+html {
+    text-align: center;
+    background-color: $bg1;
+    overflow: auto;
+}
+
+body {
+    margin: 0 10%;
+    padding-top: 4%;   
+}
+
+.title {
+    color: $heading1;
+    font-size: 50px;
+    margin-bottom: 5%;
+}
+
+h1 { 
+    font-family: modern;
+}
+
+p, button {
+    font: 20px quicksand;
+    color: $text;
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .setting h1 {
+        font-size: 25px;
+    }
+}
+
+.info {
+    @include border(up, 2px, 25px 25px 0 0);
+    padding: 5%;
+    background-color: lighten($heading1,60);
+    text-align: left;
+    display: flex;
+
+    img {
+        width: 15%;
+        height: 15%;
+    }
+
+    p {
+        margin: 1% 0 0 3%;
+        padding: 0;
+    }
+}
+
+.settings_container {
+    @include border(down, 2px, 0 0 25px 25px);
+    background-color: $bg2;
+    text-align: left;
+    padding: 5% 5% 15% 5%;
+    margin-bottom: 75px;
+    $left_margin: 54px;
+
+    .setting {
+        padding: 6px 0 16px $left_margin;
+        margin-bottom: 15px;
+        border-radius: 25px;
+        border: 1px solid lightGrey;
+
+        h1 {
+            color: $heading2;
+            font-size: 30px;
+        }
+
+        p {
+            margin: 7px 0;
+        }
+
+        button { 
+            @include border(both, 1px, 4px);
+            background-color: $bg2;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .checkbox {
+            transition: border-color 0.5s ease-in-out, color 0.5s;
+            background-color: $bg2;
+            border-width: 1.5px;
+
+            &[state=true] {
+                @include hover_animation(0.5s, $checkbox_enabled, $bg2);
+                border-color: $checkbox_enabled;
+                color: $checkbox_enabled;
+                &::before {
+                    content: "Enabled";
+                }
+            }
+
+            &[state=false] {
+                @include hover_animation(0.5s, $checkbox_disabled, $bg2);
+                border-color: $checkbox_disabled;
+                color: $checkbox_disabled;
+                &::before {
+                    content: "Disabled";
+                }
+            }
+        }
+
+        .setting_description {
+            font-size: 13.5px;
+            color: lighten($text, 40);
+        }
+
+
+    }
+
+    .apply {
+        @include border(both, 1px, 4px);
+        @include hover_animation(0.3s, $heading2, $bg2);
+        margin: 3% 0 1% $left_margin;
+        background-color: $bg2;
+        font-size: 25px;
+        padding: 3px 15px;
+        color: $heading2;
+    }
+
+    .settings_applied_message {
+        margin-left: $left_margin;
+        color: $heading2;
+        opacity: 0;
+        &::before {
+            content: "Settings Applied!";
+        }
+    }
+
+    .fade_in_out {
+        animation-name: fade_in_out;
+        animation-duration: 2s;
+    }
+}

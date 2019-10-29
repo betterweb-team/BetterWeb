@@ -1,0 +1,38 @@
+{
+    "name": "BetterWeb",
+    "version": "0.0.1",
+    "description": "A chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "options_page": "options_page.html",
+    "page_action": {
+        "default_icon": "icons/icon19.png",
+        "default_title": "Info",
+        "default_popup": "page_action.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": [
+            "js/retrieve.js",
+            "js/article.js",
+            "js/inject.js"
+        ]
+    }],
+    "web_accessible_resources": [
+        "./*"
+    ]
+
+}

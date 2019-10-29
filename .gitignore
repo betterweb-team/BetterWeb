@@ -4,3 +4,6 @@ node_modules/
 
 # Webstorm
 .idea/*
+
+# Dist folder
+dist_unpacked/
