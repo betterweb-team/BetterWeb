@@ -1,6 +1,6 @@
 {
   "name": "betterweb",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A chrome plugin that uses Machine Learning and Natural Language Process to help building a better, more rational web.",
   "main": "index.js",
   "scripts": {
