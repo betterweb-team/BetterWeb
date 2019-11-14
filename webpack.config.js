@@ -9,8 +9,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var options = {
     target: "web", // Chrome client browser environment
-    mode: "production",
-
+    mode: "development",
+    devtool: 'cheap-module-source-map',
+    optimization: {
+        // We no not want to minimize our code.
+		minimize: false
+	},
     entry: {
         article: path.join(__dirname, "src", "js", "article.js"),
         background: path.join(__dirname, "src", "js", "background.js"),

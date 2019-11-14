@@ -8,6 +8,7 @@
     "build-scss-only": "sass src/scss:src/css",
     "build-scss-live": "sass --watch src/scss:src/css",
     "build-all": "cp -rf src/ dist_unpacked/ && npx webpack && sass dist_unpacked/scss:dist_unpacked/css && echo 'Copying + Webpack + SCSS done. Reload plugin from browser.'",
+    "build-all-windows": "robocopy src/ dist_unpacked/ * /E & npx webpack & sass dist_unpacked/scss:dist_unpacked/css & echo 'Copying + Webpack + SCSS done. Reload plugin from browser.'",
     "start": ""
   },
   "repository": {
