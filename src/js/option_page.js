@@ -1,3 +1,5 @@
+import retrieve from "./retrieve";
+
 const SETTINGS = {
     /**
      * Get settings from index.html
@@ -20,7 +22,7 @@ const SETTINGS = {
 
     getDefaults: function getDefaults() {
         var defaults = {};
-        for (element of document.querySelectorAll("[setting]")) {
+        for (var element of document.querySelectorAll("[setting]")) {
             defaults[element.getAttribute("setting")] = element.getAttribute("default");
         };
 
@@ -28,70 +30,12 @@ const SETTINGS = {
     }
 }
 
-
-const retrieve = {
-
-    /**
-     * Converts valid forms of settings into an Array of keys, to be sent to getStoredSettings
-     * @param settings Settings to be parsed
-     * @returns {Array} An array with all settings 
-     */
-
-    parseSettings: function parseSettings(settings) {
-        if (Array.isArray(settings)) { // Array
-            return settings;
-        } else { // Arbritrary Object
-            return Object.keys(settings)
-        }
-    },
-
-    /**
-     * Retrieves user settings from chrome.storage
-     * @param {Array} settings An array of settings to get 
-     * @returns {Promise<Object>} Promise that resolves to object with requested settings
-     */
-
-    getStoredSettings: async function getStoredSettings(settings) {
-        res = {};
-        for (var i in settings) {
-            v = settings[i];
-            var setting = await new Promise(function requestSettings(resolve) {
-                chrome.storage.local.get([v], function resolveResults(results) {
-                    resolve(results);
-                });
-            });
-
-            if (!setting[v]) {
-                res[v] = null;
-            } else {
-                res[v] = setting[v];
-            }
-        }
-        
-        return res;
-    },
-
-    /**
-     * Sets stored user settings to defaults defined in settings.js
-     * @param {Object} settings An object for settings to set in the form {key: value}
-     * @returns {Promise<undefined>} Promise that resolves when settings are applied 
-     */
-
-    setSettings: function setSettings(settings) {
-        return new Promise(function requestSetSettings(resolve) {
-            chrome.storage.local.set(settings, function resolveResults() {
-                resolve();
-            });
-        });
-    }  
-}
-
 const startup = {
     
     /**
      * Sets undefined settings to their defaults
-     * @param {Object} settings Object wtih settings to be checked in the form {setting:value}
-     * @param {Object} default Object wtih settings defaults in the form {setting:default}
+     * @param {Object} settings Object with settings to be checked in the form {setting:value}
+     * @param {Object} df Object with settings defaults in the form {setting:default}
      * @returns {Object} Promise that resolves with fixed settings object
      */
 
@@ -104,7 +48,10 @@ const startup = {
 
         return settings;
     },
-
+    /**
+     * Applies retrieved settings to the settings page
+     * @param {Object} settings Settings object
+     */
     applySettings: function applySettings(settings) {
         Object.keys(settings).forEach(element => {
             document.querySelector("[setting=" + element + "]").setAttribute("state", settings[element])
@@ -147,8 +94,8 @@ window.addEventListener('load', function main() {
     var settingsAppliedMessage = document.querySelector(".settings_applied_message");
 
     applyButton.addEventListener("click", function(e) {
-        var settings = window.SETTINGS.getSettings();
-        retrieve.setSettings(settings)
+        var settings = SETTINGS.getSettings();
+        retrieve.setSettings(settings);
     });
 
     settingsAppliedMessage.addEventListener("animationend", function(e) {

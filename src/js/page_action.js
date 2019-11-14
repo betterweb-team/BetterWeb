@@ -1,3 +1,5 @@
+import retrieve from "./retrieve";
+
 function getBiasData(hostName) {
     return new Promise(function(resolve) {
         chrome.storage.local.get(['media_urls'], function(result) {
