@@ -15,6 +15,14 @@ function getBiasData(hostName) {
 }
 
 async function renderPopup(data) {
+    const settings = await retrieve.getStoredSettings(["extension_enabled", "media_bias_enabled"]);
+
+    if (settings.extension_enabled === "false" || settings.media_bias_enabled === "false") {
+        document.querySelector("body").innerHTML = `
+            <p id="disabled">BetterWeb has been disabled.</p>
+       `;
+    }
+
     var biasData = await getBiasData(data.hostname);
     if (biasData) {
         const body = document.querySelector("body");
@@ -33,7 +41,7 @@ async function renderPopup(data) {
                 </div>
             </div>
             <div class="source_reliability_container">
-                <p>Reliability: ${biasData.factual}</p>
+                <p>Reliability: ${biasData.factual ? biasData.factual : "Unknown"}</p>
             </div>
         </div>
         `;
@@ -73,7 +81,7 @@ async function renderPopup(data) {
                     reliability_color = "red";
                     break;
                 default:
-                    reliability_color = "rgb(221, 181, 32)";
+                    reliability_color = "rgb(221, 181, 32)"; // Yellow
             }
             reliability_container.style.color = reliability_color;
             reliability_container.style.borderColor = reliability_color;

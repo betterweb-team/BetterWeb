@@ -17,7 +17,7 @@ const retrieve = {
     /**
      * Retrieves user settings from chrome.storage
      * @param {Array} settings An array of settings to get
-     * @returns {Promise<Object>} Promise that resolves to object with requested settings
+     * @returns {Promise<Object>} Promise that resolves to object with requested settings, with setting name as key and setting value as value
      */
 
     getStoredSettings: async function getStoredSettings(settings) {
