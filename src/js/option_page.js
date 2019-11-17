@@ -73,37 +73,29 @@ async function main1() {
     startup.applySettings(settingsList);
 }
 
-window.addEventListener('load', main1)
+window.addEventListener('load', main1);
 
 window.addEventListener('load', function main() {
     "use strict";
+    var settingsAppliedMessage = document.querySelector(".settings_applied_message");
 
     // Checkbox events
     for (var element of document.querySelectorAll(".checkbox")) {
         element.addEventListener("click", function(e) {
-            if (this.getAttribute("state") == "true") {
+            if (this.getAttribute("state") === "true") {
                 this.setAttribute("state", "false");
             } else {
                 this.setAttribute("state", "true");
             }
+
+            retrieve.setSettings(SETTINGS.getSettings());
+            settingsAppliedMessage.setAttribute("class", "settings_applied_message fade_in_out");
         });
+
     }
-
-    // Apply button events
-    var applyButton = document.querySelector(".apply");
-    var settingsAppliedMessage = document.querySelector(".settings_applied_message");
-
-    applyButton.addEventListener("click", function(e) {
-        var settings = SETTINGS.getSettings();
-        retrieve.setSettings(settings);
-    });
 
     settingsAppliedMessage.addEventListener("animationend", function(e) {
         this.setAttribute("class", "settings_applied_message");
-    });
-
-    applyButton.addEventListener("click", function(e) {
-        settingsAppliedMessage.setAttribute("class", "settings_applied_message fade_in_out");
     });
 });
 
